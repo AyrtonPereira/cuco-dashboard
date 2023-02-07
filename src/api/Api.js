@@ -3,7 +3,7 @@ import axios from "axios";
 class API {
   constructor(options = {}) {
     this.api = axios.create({
-      baseURL: "https://jsonplaceholder.typicode.com/db",
+      baseURL: "http://localhost:3003",
       timeout: 3000,
       ...options,
     });
