@@ -7,13 +7,13 @@ const route = useRoute();
 const routeName = computed(() => route.meta.routeName);
 </script>
 <template>
-  <div class="cuco-header px-40 flex flex-col">
-    <Header class="mb-8 mt-5" />
-    <h1 class="cuco-title text-4xl font-semibold mb-5 text-white">
+  <div class="cuco-header px-4 md:px-10 lg:px-40 flex flex-col md:h-60">
+    <Header class="md:mb-8 mt-5" />
+    <h1 class="cuco-title text-4xl font-semibold mb-10 md:mb-5 text-white">
       {{ routeName }}
     </h1>
   </div>
-  <main class="px-40">
+  <main class="px-4 md:px-10 lg:px-40">
     <div class="-top-4">
       <RouterView />
     </div>
@@ -22,6 +22,5 @@ const routeName = computed(() => route.meta.routeName);
 <style lang="scss">
 .cuco-header {
   background-color: #2095f2;
-  height: 30vh;
 }
 </style>
