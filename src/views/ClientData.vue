@@ -14,6 +14,7 @@ const state = reactive({
   client: {},
   isUpdate: false,
   saving: false,
+  loading: true,
 });
 
 onMounted(async () => {
@@ -21,6 +22,7 @@ onMounted(async () => {
     state.isUpdate = true;
     state.client = await clientStore.getClientByID(route.params.id);
   }
+  state.loading = false;
 });
 
 const saveClient = async (client) => {
@@ -42,7 +44,7 @@ const saveClient = async (client) => {
 <template>
   <div>
     <div
-      v-if="state.isUpdate && !state.client?.id"
+      v-if="state.isUpdate && !state.client?.id && !state.loading"
       class="bg-white flex items-center justify-center h-40 p-5"
     >
       <h1 class="text-xl text-gray-500">
