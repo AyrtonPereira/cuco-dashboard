@@ -5,27 +5,20 @@
         <div class="flex h-16 items-center justify-between">
           <div class="flex items-center">
             <div class="flex-shrink-0">
-              <img src="@/assets/cuco-logo.svg" alt="Logo do aplicativo Cuco" />
+              <router-link :to="{ name: 'app.clients' }">
+                <img
+                  src="@/assets/cuco-logo.svg"
+                  alt="Logo do aplicativo Cuco"
+                />
+              </router-link>
             </div>
           </div>
-          <div class="hidden md:block">
+          <div v-if="isDashboard" class="hidden sm:block">
             <div class="ml-4 flex items-center md:ml-6">
-              <BaseButton type="danger">Novo Cliente</BaseButton>
+              <router-link :to="{ name: 'app.newClient' }">
+                <BaseButton variation="danger">Novo Cliente</BaseButton>
+              </router-link>
             </div>
-          </div>
-          <div class="-mr-2 flex md:hidden">
-            <!-- Mobile menu button -->
-            <DisclosureButton
-              class="inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-            >
-              <span class="sr-only">Open main menu</span>
-              <Bars3Icon
-                v-if="!open"
-                class="block h-6 w-6"
-                aria-hidden="true"
-              />
-              <XMarkIcon v-else class="block h-6 w-6" aria-hidden="true" />
-            </DisclosureButton>
           </div>
         </div>
       </div>
@@ -62,9 +55,13 @@ import {
   MenuItem,
   MenuItems,
 } from "@headlessui/vue";
+import { computed } from "vue";
+import { useRoute } from "vue-router";
 import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
 import { UserCircleIcon } from "@heroicons/vue/24/solid";
 import BaseButton from "@/components/form/BaseButton.vue";
+const route = useRoute();
+const isDashboard = computed(() => route.name == "app.clients");
 
 const navigation = [{ name: "Dashboard", href: "/", current: true }];
 </script>
