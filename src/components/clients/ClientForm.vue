@@ -137,12 +137,18 @@ const onSubmit = async () => {
       <div class="flex justify-between md:justify-end w-full self-end">
         <BaseButton
           class="px-10"
-          type="secondary"
+          variation="secondary"
           label="Cancelar"
           @click="router.push({ name: 'app.clients' })"
           :blocked="saving"
+          type="button"
         />
-        <BaseButton class="px-10" label="Salvar" :loading="saving" />
+        <BaseButton
+          class="px-10"
+          type="submit"
+          label="Salvar"
+          :loading="saving"
+        />
       </div>
     </Form>
   </div>
