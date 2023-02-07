@@ -3,9 +3,87 @@
 @tailwind components;
 @tailwind utilities;
 
+
 #app {
   display: flex;
   flex-direction: column;
   font-weight: normal;
   width: 100%;
+  font-family: 'Poppins'
+}
+
+input[type="checkbox"] {
+  all: inherit;
+  background: #F0F0F5;
+  border: 2px solid #E2E8F0;
+  border-radius: 2px;
+  width: 20px;
+  height: 20px;
+}
+
+input[type="checkbox"]:checked {
+  background: #E52E4D;
+  border-color: #E52E4D;
+  color: white
+}
+
+input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 5px;
+  width: 7px;
+  height: 13px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+input[type="checkbox"]:checked::after {
+display: block
+}
+
+.Vue-Toastification__container .top-right {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.Vue-Toastification__toast {
+  display: flex;
+  align-items: center;
+  border-radius: 30px;
+}
+
+.Vue-Toastification__toast.Vue-Toastification__toast.top-right.cuco-toast {
+  background-color: white;
+  color: #27b86f;
+  padding: .8rem 2rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.Vue-Toastification__toast.Vue-Toastification__toast--success.top-right.cuco-toast {
+  color: #27b86f;
+}
+
+.Vue-Toastification__toast.Vue-Toastification__toast--error.top-right.cuco-toast {
+  color: #ed0b0b;
+}
+
+.Vue-Toastification__toast.Vue-Toastification__toast--info.top-right.cuco-toast {
+  color: #006aff;
+}
+
+.Vue-Toastification__toast.Vue-Toastification__toast--warning.top-right.cuco-toast {
+  color: #DFA100;
+}
+
+.Vue-Toastification__close-button {
+  color: #1a202c;
+  margin-left: .5rem;
+}
+
+.Vue-Toastification__icon {
+  margin: 0 15px 0 0;
 }
