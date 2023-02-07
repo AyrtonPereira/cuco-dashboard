@@ -17,6 +17,6 @@ const value = computed({
 <template>
   <Field
     v-model="value"
-    class="rounded-md relative block w-full appearance-none border border-zinc-300 px-3 py-2 text-zinc-900 placeholder-zinc-500 focus:z-10 focus:border-zinc-500 focus:outline-none focus:ring-zinc-500 sm:text-sm"
+    class="rounded relative block font-sans w-full focus:outline-none text-gray-400 placeholder-gray-400 appearance-none border px-3 py-3 sm:text-sm"
   />
 </template>

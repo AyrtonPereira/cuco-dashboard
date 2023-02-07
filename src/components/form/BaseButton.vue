@@ -1,6 +1,6 @@
 <script setup>
 const props = defineProps({
-  type: { type: String, default: "primary" },
+  variation: { type: String, default: "primary" },
   label: { type: String },
   loading: { type: Boolean, default: false },
   blocked: { type: Boolean, default: false },
@@ -16,10 +16,10 @@ const buttonPills = {
 </script>
 <template>
   <button
-    :class="`transition-all duration-200 flex w-full justify-center rounded-md border py-2 px-4 text-sm font-medium focus:outline-none focus:ring-2  focus:ring-offset-2 ${
-      buttonPills[type]
+    :class="`transition-all duration-200 flex justify-center rounded-md border py-2 px-5 text-sm font-medium  ${
+      buttonPills[variation]
     }
-    ${loading ? 'opacity-20 animate-pulse' : ''} 
+    ${loading ? 'opacity-20 animate-pulse pointer-events-none' : ''} 
     ${blocked ? 'pointer-events-none opacity-20' : ''}`"
   >
     <slot>{{ label }}</slot>
@@ -28,6 +28,10 @@ const buttonPills = {
 <style lang="scss" scoped>
 .cuco-color-danger {
   background-color: #ee2279;
+  transition: all 0.3s;
+  &:hover {
+    background-color: #db1f71;
+  }
 }
 
 .cuco-color-secondary {
@@ -36,5 +40,9 @@ const buttonPills = {
 
 .cuco-color-primary {
   background-color: #12a454;
+  transition: all 0.3s;
+  &:hover {
+    background-color: #118344;
+  }
 }
 </style>
