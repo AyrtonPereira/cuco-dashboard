@@ -42,7 +42,7 @@ const saveClient = async (client) => {
 };
 </script>
 <template>
-  <div>
+  <div v-if="!state.loading">
     <div
       v-if="state.isUpdate && !state.client?.id && !state.loading"
       class="bg-white flex items-center justify-center h-40 p-5"
