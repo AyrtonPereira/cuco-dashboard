@@ -3,7 +3,7 @@ import axios from "axios";
 class API {
   constructor(options = {}) {
     this.api = axios.create({
-      baseURL: "http://localhost:3003",
+      baseURL: "https://json-server-ashy.vercel.app/",
       timeout: 3000,
       ...options,
     });
